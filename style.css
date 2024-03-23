@@ -1,0 +1,193 @@
+			body {
+				-webkit-user-select: none;
+				background-color: black;
+				cursor: default;
+				margin: 0;
+				height:100%;
+   	 			padding:0;
+            	position: fixed;
+				width: 100%;
+				height: 100%;
+				user-select:none;
+				overflow: hidden;
+				color: white;
+				font-family: 'Inter', sans-serif;
+			}
+			.buttons-container {
+				position: fixed;
+				bottom: 20px;
+				width: 100%;
+				display: inline-block;
+			}
+			.buttons {
+				margin: auto;
+				text-align: center;
+			}
+			.buttons>div>span {
+				display: inline-block;
+				height: 80px;
+				border-radius: 200px;
+				box-sizing: border-box;
+				padding: 0;
+				transition: background-color 0.5s, opacity 0.5s, transform 0.2s;
+				position: relative;
+			}
+			.buttons>div>span>span {
+				position: relative;
+				pointer-events:none;
+
+				display: grid;
+				place-items: center;
+				width: 100%;
+				height: 100%;
+				position: relative;
+				left: 0; top: 0;
+			}
+			.buttons>div>span#b-ac>span {
+				font-size: 26px;
+				font-weight: 300;
+			}
+			.buttons>div>span#b-dec>span {
+				font-size: 38px;
+				font-weight: 400;
+			}
+			.buttons>div>span.white {
+				background-color: #A0A0A0;
+				color: black;
+			}
+			.buttons>div>span.gray {
+				background-color: #313131;
+			}
+			.buttons>div>span.orange {
+				background-color: rgb(254, 160, 12);
+			}
+			.buttons>div>span.orange img, .buttons>div>span.gray img {
+				filter: invert(100%);
+			}
+			.buttons-grid {
+            	display: grid;
+                gap: 10px;
+                margin: auto;
+                grid-template-columns: 80px 80px 80px 80px;
+                grid-template-areas: '. . . .' '. . . .' '. . . .' '. . . .' 'zero zero . .';
+                justify-content: center;
+            }
+			#b-0 {
+				border-radius: 80px;
+				grid-area: zero;
+			}
+			#display{
+				font-size: 78px; /* max display font size (1/2) */
+				font-weight: 226;
+				text-align: right;
+				margin-right: 10px;
+				margin-bottom: 10px;
+				line-height: 1;
+			}
+			#displayContainer{
+				max-width: 360px;
+				margin: auto;
+				padding-bottom: 20px;
+			}
+			#par1 {
+				opacity: 0.5;
+				font-size: 0.8em;
+			}
+			@media (min-width: 530px) and (min-height: 800px) {
+				.buttons > div > span {
+					height: 85px;
+				}
+				.buttons-grid {
+					grid-template-columns: 85px 85px 85px 85px;
+					gap: 14px;
+				}
+			#clock {
+    				top: 29px;
+    				left: 80px;
+				}
+			}			
+			@media (max-width: 370px), (max-height: 590px) {
+				.buttons > div > span {
+					height: 74px;
+				}
+				.buttons-grid {
+					grid-template-columns: 74px 74px 74px 74px;
+				}
+			}
+			@media (max-width: 347px), (max-height: 550px) {
+				.buttons > div > span {
+					height: 68px;
+				}
+				.buttons-grid {
+					grid-template-columns: 68px 68px 68px 68px;
+					gap: 8px;
+				}
+			}
+			@media (max-width: 310px), (max-height: 500px) {
+				.buttons > div > span {
+					height: 62px;
+				}
+				.buttons-grid {
+					grid-template-columns: 62px 62px 62px 62px;
+					gap: 8px;
+				}
+			}
+			@media (max-width: 285px), (max-height: 465px) {
+				.buttons-grid {
+					gap: 4px;
+				}
+			}
+
+			#hst-wrapper {
+				overflow: scroll;
+				display: grid;
+				place-items: end;
+				width: 100%;
+				margin: auto;
+				margin-bottom: -10px;
+				height: 100px;
+				position: relative;
+			}
+			#hst-wrapper:after {
+  				content: "";
+  				position: fixed;
+  				top: 0;
+  				left:0;
+  				pointer-events: none;
+  				background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgb(0, 0, 0) 100%);
+				width: 100%;
+				height: 50px;
+			}
+			#displayContainer:after {
+  				content: "";
+  				position: absolute;
+  				pointer-events: none;
+  				background-image: linear-gradient(to top, rgb(0, 0, 0), rgba(0, 0, 0, 0) 100%);
+				width: 100%;
+				height: 10px;
+				transform: translateY(1px);
+			}
+			.noscrollbar::-webkit-scrollbar {
+				display: none;
+			}
+			#display-inner-wrapper {
+				width: 100%;
+			}
+			#hst {
+				font-size: 30px;
+				line-height: 1.6;
+				text-align: right;
+				color: gray;
+				width: 92%;
+				margin: auto;
+				padding-top: 20px;
+				float: bottom;
+			}
+			#hst > #cur-hst {
+				font-size: 44px;
+				font-weight: 240;
+				color: white;
+			}
+			#hst hr {
+				opacity: 0.2;
+			}
